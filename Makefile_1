@@ -1,0 +1,12 @@
+all: echo.cgi
+
+OBJS=echo.o
+LIBS=-lfcgi
+CFLAGS=-o2
+echo.cgi:$(OBJS)
+	gcc -o echo.cgi $(OBJS) $(LIBS)
+.c.o:
+.PHONY:clean
+
+clean:
+	rm $(OBJS) *~
